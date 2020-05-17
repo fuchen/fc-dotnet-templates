@@ -15,7 +15,7 @@
         </mahc:WindowCommands>
     </mah:MetroWindow.RightWindowCommands>
     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,25,0,0">
-        <TextBlock Text="{Binding Counter, StringFormat=Counter value: \{0\}, FallbackValue=Counter value: 0}" Width="126" VerticalAlignment="Center" />
+        <TextBlock Text="{Binding CounterValue, StringFormat=Counter value: \{0\}, FallbackValue=Counter value: 0}" Width="126" VerticalAlignment="Center" />
         <Button Command="{Binding Decrement}" Content="-" Margin="0,5,10,5" Width="30" />
         <Button Command="{Binding Increment}" Content="+" Margin="0,5,10,5" Width="30" />
         <TextBlock Text="{Binding StepSize, StringFormat=Step size: \{0\}, FallbackValue=Step size:1}" Width="84" VerticalAlignment="Center" />
