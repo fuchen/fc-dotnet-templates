@@ -1,0 +1,31 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Chen Fu",
+    "classifications": [ "Common", "WPF", "Elmish" ],
+    "name": "Elmish.WPF & MahApps template",
+    "identity": "Elmish.WPF.MahApps",
+    "shortName": "elmish-mahapps",
+    "sourceName": "SingleCounter",
+    "tags": {
+      "language": "F#"
+    },
+    "preferNameDirectory": true,
+    "sources": [
+      {
+        "include": [
+          "SingleCounter.sln",
+          "paket.lock",
+          "paket.dependencies",
+
+          "SingleCounter/*.fs",
+          "SingleCounter/*.fsproj",
+          "SingleCounter/paket.references",
+
+          "SingleCounter.Views/*.cs",
+          "SingleCounter.Views/*.xaml",
+          "SingleCounter.Views/*.csproj",
+          "SingleCounter.Views/paket.references"
+        ]
+      }
+    ]
+  }
