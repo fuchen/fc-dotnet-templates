@@ -13,6 +13,7 @@
     "sources": [
       {
         "include": [
+          ".gitignore",
           "SingleCounter.sln",
           "paket.lock",
           "paket.dependencies",
