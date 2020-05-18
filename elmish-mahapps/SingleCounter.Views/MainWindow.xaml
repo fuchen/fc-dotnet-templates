@@ -3,36 +3,44 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-    xmlns:mahc="http://metro.mahapps.com/winfx/xaml/controls"
-    Title="Single counter" Height="300" Width="800" FontSize="14" ShowDialogsOverTitleBar="False"
+    Title="Single counter" Height="600" Width="800" ShowDialogsOverTitleBar="False"
+    OverlayFadeIn="{DynamicResource OverlayFadeIn}" OverlayFadeOut="{DynamicResource OverlayFadeOut}"
     WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <ResourceDictionary Source="Resources.xaml" />
     </Window.Resources>
-    <mah:MetroWindow.RightWindowCommands>
-        <mahc:WindowCommands>
-            <Button Content="Login" />
-        </mahc:WindowCommands>
-    </mah:MetroWindow.RightWindowCommands>
-    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,25,0,0">
-        <TextBlock Text="{Binding CounterValue, StringFormat=Counter value: \{0\}, FallbackValue=Counter value: 0}" Width="126" VerticalAlignment="Center" />
-        <Button Command="{Binding Decrement}" Content="-" Margin="0,5,10,5" Width="30" />
-        <Button Command="{Binding Increment}" Content="+" Margin="0,5,10,5" Width="30" />
-        <TextBlock Text="{Binding StepSize, StringFormat=Step size: \{0\}, FallbackValue=Step size:1}" Width="84" VerticalAlignment="Center" />
-        <Slider Value="{Binding StepSize}" TickFrequency="1" Maximum="10" Minimum="1" IsSnapToTickEnabled="True" Width="175" />
-        <Button Command="{Binding Reset}" Content="Reset" Margin="0,5,10,5" Width="66" />
-        <Button Command="{Binding ShowMessage}" Content="Show Dialog" Margin="0,5,10,5" Width="135" Style="{DynamicResource MahApps.Styles.Button.Dialogs.Accent}"/>
-        <ItemsControl ItemsSource="{Binding buttons}">
+    <mah:MetroWindow.LeftWindowCommands>
+        <mah:WindowCommands>
+            <Button Content="登录" />
+        </mah:WindowCommands>
+    </mah:MetroWindow.LeftWindowCommands>
+    <StackPanel>
+        <TabControl mah:TabControlHelper.Underlined="TabPanel">
+            <TabItem Header="Tab 1"></TabItem>
+            <TabItem Header="Tab 2"></TabItem>
+        </TabControl>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,25,0,0">
+            <TextBlock Text="{Binding CounterValue, StringFormat=Counter value: \{0\}, FallbackValue=Counter value: 0}" Width="126" VerticalAlignment="Center" />
+            <Button Command="{Binding Decrement}" Content="-" Margin="0,5,10,5" Width="30" />
+            <Button Command="{Binding Increment}" Content="+" Margin="0,5,10,5" Width="30" />
+            <TextBlock Text="{Binding StepSize, StringFormat=Step size: \{0\}, FallbackValue=Step size:1}" Width="84" VerticalAlignment="Center" />
+            <Slider Value="{Binding StepSize}" TickFrequency="1" Maximum="10" Minimum="1" IsSnapToTickEnabled="True" Width="175" />
+            <Button Command="{Binding Reset}" Content="Reset" Margin="0,5,10,5" Width="66" />
+        </StackPanel>
+        <ItemsControl ItemsSource="{Binding RadioButtons}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <RadioButton GroupName="RadioTest" Content="{Binding}" Margin="5"/>
+                    <RadioButton GroupName="RadioGroup" Content="{Binding}" Margin="5"/>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <WrapPanel Orientation="Horizontal" Width="100"/>
+                    <WrapPanel Orientation="Horizontal" Width="200"/>
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
         </ItemsControl>
+        <Button Command="{Binding ShowMessage}"
+                Content="Show Dialog" Margin="0,5,10,5" Width="135"
+                Style="{DynamicResource MahApps.Styles.Button.Dialogs.Accent}"/>
     </StackPanel>
 </mah:MetroWindow>

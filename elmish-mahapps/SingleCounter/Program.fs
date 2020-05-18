@@ -48,6 +48,7 @@ let bindings () : Binding<Model, Msg> list = [
         (fun m -> float m.StepSize),
         int >> SetStepSize)
     "Reset" |> Binding.cmd Reset
+    "RadioButtons" |> Binding.oneWay (fun _ -> ["option 1"; "option 2"; "option 3"])
     "ShowMessage" |> Binding.cmd (ShowMessage("Hello", "Hello world!"))
 ]
 

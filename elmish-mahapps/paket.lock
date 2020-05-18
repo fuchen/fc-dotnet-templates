@@ -1,5 +1,5 @@
 STORAGE: NONE
-RESTRICTION: == netcoreapp3.0
+RESTRICTION: == netcoreapp3.1
 NUGET
   remote: https://api.nuget.org/v3/index.json
     ControlzEx (4.3.0-alpha0107)
@@ -14,8 +14,4 @@ NUGET
     MahApps.Metro (2.0.0-alpha0821)
       ControlzEx (>= 4.3.0-alpha0107)
     Microsoft.Xaml.Behaviors.Wpf (1.1.19)
-    System.Runtime.CompilerServices.Unsafe (4.7.1)
-    System.Text.Encodings.Web (4.7.1)
     System.Text.Json (4.7.2)
-      System.Runtime.CompilerServices.Unsafe (>= 4.7.1)
-      System.Text.Encodings.Web (>= 4.7.1)
